@@ -137,35 +137,31 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                fle = await client.send_cached_media(
+                msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
                 await asyncio.sleep(600)
-                await fle.delete()
-                fletxt = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
-                await asyncio.sleep(500)
-                await fletxt.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
-                await asyncio.sleep(100)
-                await fletxt.delete()
+                await msg.delete()
+                await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+                return
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                fle = await client.send_cached_media(
+                msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                k = await msg.reply("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>",quote=True)
                 await asyncio.sleep(600)
-                await fle.delete()
-                fletxt = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
-                await asyncio.sleep(500)
-                await fletxt.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
-                await asyncio.sleep(100)
-                await fletxt.delete()
+                await msg.delete()
+                await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+                return
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
