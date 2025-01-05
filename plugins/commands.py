@@ -137,21 +137,35 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                await client.send_cached_media(
+                fle = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                await asyncio.sleep(600)
+                await fle.delete()
+                fletxt = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
+                await asyncio.sleep(500)
+                await fletxt.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
+                await asyncio.sleep(100)
+                await fletxt.delete()
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                await client.send_cached_media(
+                fle1 = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
+                await asyncio.sleep(600)
+                await fle1.delete()
+                fletxt1 = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
+                await asyncio.sleep(500)
+                await fletxt1.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
+                await asyncio.sleep(100)
+                await fletxt1.delete()
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
