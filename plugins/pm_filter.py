@@ -363,12 +363,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     protect_content=True if ident == "filep" else False 
                 )
                 await asyncio.sleep(600)
-                await fle.delete()
-                fletxt = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
-                await asyncio.sleep(500)
-                await fletxt.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
-                await asyncio.sleep(100)
-                await fletxt.delete()
+                await fle.delete()                    
                 await query.answer('Check PM, I have sent files in pm', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the bot mahn !', show_alert=True)
@@ -407,11 +402,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
         await asyncio.sleep(600)
         await fle.delete()
-        fletxt = await client.send_message(chat_id = message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie Files/Videos will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this ALL Files/Videos to your Saved Messages and Start Download there</i></b>")
-        await asyncio.sleep(500)
-        await fletxt.edit_text("⚠️ Deleting Soon\n<b>1 min left For saving file 🗃️</b>")
-        await asyncio.sleep(100)
-        await fletxt.delete()
+        
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
