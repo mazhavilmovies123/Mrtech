@@ -143,7 +143,7 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await m.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
+                k = await message.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
                 await asyncio.sleep(600)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -157,7 +157,7 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await m.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
+                k = await message.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
                 await asyncio.sleep(600)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -223,7 +223,7 @@ async def start(client, message):
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
-            k = await msg.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
+            k = await message.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
             await asyncio.sleep(600)
             await m.delete()
             await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -261,7 +261,7 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
     )
-    k = await msg.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
+    k = await message.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
     await asyncio.sleep(600)
     await m.delete()
     await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
