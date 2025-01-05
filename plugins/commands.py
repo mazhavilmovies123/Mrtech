@@ -137,30 +137,30 @@ async def start(client, message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-                msg = await client.send_cached_media(
+                m = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await msg.reply_text("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>")
+                k = await m.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
                 await asyncio.sleep(600)
-                await msg.delete()
-                await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+                await m.delete()
+                await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
                 return
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                msg = await client.send_cached_media(
+                m = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await msg.reply_text("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>")
+                k = await m.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
                 await asyncio.sleep(600)
-                await msg.delete()
-                await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+                await m.delete()
+                await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
                 return
             except Exception as e:
                 logger.warning(e, exc_info=True)
@@ -218,15 +218,15 @@ async def start(client, message):
     if not files_:
         pre, file_id = ((base64.urlsafe_b64decode(data + "=" * (-len(data) % 4))).decode("ascii")).split("_", 1)
         try:
-            msg = await client.send_cached_media(
+            m = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
-            k = await msg.reply_text("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>")
+            k = await msg.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
             await asyncio.sleep(600)
-            await msg.delete()
-            await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+            await m.delete()
+            await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
             return
             filetype = msg.media
             file = getattr(msg, filetype.value)
@@ -255,16 +255,16 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    await client.send_cached_media(
+    m=await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
     )
-    k = await msg.reply_text("<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nThis Movie File/Video will be deleted in <b><u>10 mins</u> 🫥 <i></b>(Due to Copyright Issues)</i>.\n\n<b><i>Please forward this File/Video to your Saved Messages and Start Download there</i></b>")
+    k = await msg.reply_text("This file is only for 10 mins \n Keep it in Saved Message or Download Now\n(Due to Copyright ©️)")
     await asyncio.sleep(600)
-    await msg.delete()
-    await k.edit_text("<b>Your File/Video is successfully deleted!!!</b>")
+    await m.delete()
+    await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
     return             
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
