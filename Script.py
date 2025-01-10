@@ -98,7 +98,10 @@ Request Again"""
     MOV_NT_FND="""**Tʜɪs Mᴏᴠɪᴇ Is Nᴏᴛ Yᴇᴛ Rᴇᴀʟᴇsᴇᴅ Oʀ Aᴅᴅᴇᴅ Tᴏ DB**
 __**Report To ADMIN - @im_goutham_josh**__
 """
-
+    SPOLL_NOT_FND="""I couldn't find anything related to your request. 😵
+Try reading the instruction below 👇🏼
+    """
+    
 #SPELL CHECK LANGUAGES TO KNOW callback
     ENG_SPELL="""Please Note Below📓
 ➤ Ask in Correct Spelling
