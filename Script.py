@@ -104,9 +104,9 @@ Try reading the instruction below 👇🏼
     
 #SPELL CHECK LANGUAGES TO KNOW callback
     ENG_SPELL="""Please Note Below📓
-➤ Ask in Correct Spelling
-➤ Don't ask Movies which are not Realased on OTT PLATFORMS
-➤ Possible  ASK [movie name langauge] like this or [movie year]
+Ask in Correct Spelling
+Don't ask Movies which are not Realased on OTT PLATFORMS
+Possible  ASK [movie name langauge] like this or [movie year]
     """
     MAL_SPELL="""ദയവായി താഴെ ശ്രദ്ധിക്കുക📓
 ➤ ശരിയായ അക്ഷരവിന്യാസത്തിൽ ചോദിക്കുക
