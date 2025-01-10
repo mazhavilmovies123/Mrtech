@@ -1,8 +1,5 @@
 # Kanged From @TroJanZheX
-import asyncio
-import re
-import ast
-import math
+import asyncio,re,ast,math,logging,tgcrypto
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from Script import script
 import pyrogram
@@ -21,7 +18,6 @@ from database.filters_mdb import (
     find_filter,
     get_filters,
 )
-import logging
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -114,39 +110,29 @@ async def next_page(bot, query):
     await query.answer()
 
 
-@Client.on_callback_query(filters.regex(r"^spol"))
+@Client.on_callback_query(filters.regex(r"^spol")) ###SOMECHANGES DONE BY GOUTHAMSER
 async def advantage_spoll_choker(bot, query):
-    _, user, movie_, key = query.data.split('#')
-    movies = temp.SPELL_CHECK.get(key)
-    if not movies:
-        return await query.answer(
-            script.OLD_ALRT_TXT.format(query.from_user.first_name), 
-            show_alert=True
-        )   
+    _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer(
-            script.ALRT_TXT.format(query.from_user.first_name), 
-            show_alert=True
-        )  
+        return await query.answer("Thiz is Not For You 🚫", show_alert=True)
     if movie_ == "close_spellcheck":
-        return await query.message.delete()    
-    movie = movies[int(movie_)]
-    await query.answer(script.TOP_ALRT_MSG) 
-    # Assuming `k` is defined earlier or globally
-    if k == False: 
-        files, offset, total_results = await get_search_results(
-            query.message.chat.id, 
-            movie, 
-            offset=0, 
-            filter=True
-        )
-        
+        return await query.message.delete()
+    movies = SPELL_CHECK.get(query.message.reply_to_message.id)
+    if not movies:
+        return await query.answer(script.OLD_MES, show_alert=True)#script change
+    movie = movies[(int(movie_))]
+    await query.answer(script.CHK_MOV_ALRT)#script change
+    k = await manual_filters(bot, query.message, text=movie)
+    if k == False:
+        files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
         if files:
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            reqstr1 = query.from_user.id if query.from_user else 0
-            reqstr = await bot.get_users(reqstr1)
+            k = await query.message.edit(script.MOV_NT_FND)#script change
+            await asyncio.sleep(15)
+            await k.delete()
+
 
 
 @Client.on_callback_query()
@@ -409,7 +395,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-        
+        # ALERT FN FOR SPELL CHECK
+    elif query.data == "msp":
+        await query.answer(text=script.MAL_SPELL, show_alert="true")
+    elif query.data == "hsp":
+        await query.answer(text=script.HIN_SPELL, show_alert="true")
+    elif query.data == "tsp":
+        await query.answer(text=script.TAM_SPELL, show_alert="true")
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
@@ -431,11 +423,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
             InlineKeyboardButton('Auto Filter', callback_data='autofilter')
-        ], [
-            InlineKeyboardButton('Connection', callback_data='coct'),
-            InlineKeyboardButton('Extra Mods', callback_data='extra')
         ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔮 Status', callback_data='stats')
@@ -448,46 +436,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
-            InlineKeyboardButton('🤖 Updates', url='https://t.me/wudixh14'),
-            InlineKeyboardButton('♥️ Source', callback_data='source')
-        ], [
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.ABOUT_TXT.format(temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "source":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='about')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.SOURCE_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "manuelfilter":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('⏹️ Buttons', callback_data='button')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.MANUELFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "button":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='manuelfilter')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.BUTTON_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -498,37 +452,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.AUTOFILTER_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "coct":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.CONNECTION_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "extra":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('👮‍♂️ Admin', callback_data='admin')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.EXTRAMOD_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "admin":
-        buttons = [[
-            InlineKeyboardButton('👩‍🦯 Back', callback_data='extra')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ADMIN_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -747,6 +670,7 @@ async def auto_filter(client, msg, spoll=False):
     if spoll:
         await msg.message.delete()
 
+#SPELL CHECK RE EDITED BY GOUTHAMSER
 async def advantage_spell_chok(client, msg):
     mv_id = msg.id
     mv_rqst = msg.text
@@ -755,70 +679,72 @@ async def advantage_spell_chok(client, msg):
     settings = await get_settings(msg.chat.id)
     query = re.sub(
         r"\b(pl(i|e)*?(s|z+|ease|se|ese|(e+)s(e)?)|((send|snd|giv(e)?|gib)(\sme)?)|movie(s)?|new|latest|br((o|u)h?)*|^h(e|a)?(l)*(o)*|mal(ayalam)?|t(h)?amil|file|that|find|und(o)*|kit(t(i|y)?)?o(w)?|thar(u)?(o)*w?|kittum(o)*|aya(k)*(um(o)*)?|full\smovie|any(one)|with\ssubtitle(s)?)",
-        "", msg.text, flags=re.IGNORECASE)  # Contribute common words if necessary
+        "", msg.text, flags=re.IGNORECASE)  # plis contribute some common words
     query = query.strip() + " movie"
-
     try:
         movies = await get_poster(mv_rqst, bulk=True)
     except Exception as e:
         logger.exception(e)
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-            InlineKeyboardButton("🔎 Search Google", url=f"https://www.google.com/search?q={reqst_gle}")
+                 InlineKeyboardButton('English', 'esp'),
+                 InlineKeyboardButton('Malayalam', 'msp')
+        ],[
+                 InlineKeyboardButton('Hindi', 'hsp'),
+                 InlineKeyboardButton('Tamil', 'tsp')
+        ],[
+                 InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")
         ]]
-       # if NO_RESULTS_MSG:
-          #  await client.send_message(
-              #  chat_id=LOG_CHANNEL, 
-              #  text=script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)
-          #  )
-        k = await msg.reply(
-            text=script.I_CUDNT.format(mv_rqst),
-            reply_markup=InlineKeyboardMarkup(button)
+        
+        k = await msg.reply_text(
+            text=script.SPOLL_NOT_FND, #IN SCRIPT CHANGE DONOT CHANGE CODE
+            reply_markup=InlineKeyboardMarkup(button),
+            reply_to_message_id=msg.id
         )
-        await asyncio.sleep(30)
-        await k.delete()
+        await asyncio.sleep(15)
+        await k.delete()      
         return
-
     movielist = []
     if not movies:
         reqst_gle = mv_rqst.replace(" ", "+")
         button = [[
-            InlineKeyboardButton("🔎 Search Google", url=f"https://www.google.com/search?q={reqst_gle}")
-        ]]
-      #  if NO_RESULTS_MSG:
-           # await client.send_message(
-            #    chat_id=LOG_CHANNEL, 
-           #     text=script.NORSLTS.format(reqstr.id, reqstr.mention, mv_rqst)
-            #)
-        k = await msg.reply(
-            text=script.I_CUDNT.format(mv_rqst),
-            reply_markup=InlineKeyboardMarkup(button)
+                 InlineKeyboardButton('English', 'esp'),
+                 InlineKeyboardButton('Malayalam', 'msp')
+        ],[
+                 InlineKeyboardButton('Hindi', 'hsp'),
+                 InlineKeyboardButton('Tamil', 'tsp')
+        ],[
+                 InlineKeyboardButton('🔍 ɢᴏᴏɢʟᴇ 🔎', url=f"https://www.google.com/search?q={reqst_gle}")
+        ]]    
+        k = await msg.reply_text(
+            text=script.SPOLL_NOT_FND,  #DONOTCHANGE IN THIS CODE PLS CHANGE IN SCRIPT
+            reply_markup=InlineKeyboardMarkup(button),
+            reply_to_message_id=msg.id
         )
-        await asyncio.sleep(30)
+        await asyncio.sleep(15)
         await k.delete()
         return
-
-    movielist += [movie.get('title') for movie in movies]
-    movielist += [f"{movie.get('title')} {movie.get('year')}" for movie in movies]
-    key = f"{msg.chat.id}-{msg.id}"
-    temp.SPELL_CHECK[key] = movielist
-
+    movielist = [movie.get('title') for movie in movies]
+    SPELL_CHECK[mv_id] = movielist
     btn = [
         [
             InlineKeyboardButton(
                 text=movie_name.strip(),
-                callback_data=f"spol#{reqstr1}#{k}#{key}",
+                callback_data=f"spol#{reqstr1}#{k}",
             )
         ]
         for k, movie_name in enumerate(movielist)
     ]
-    btn.append([InlineKeyboardButton(text="Close", callback_data=f'spol#{reqstr1}#close_spellcheck#{key}')])
-    spell_check_del = await msg.reply(
-        text=script.CUDNT_FND.format(mv_rqst),
-        reply_markup=InlineKeyboardMarkup(btn)
+    btn.append([InlineKeyboardButton(text="✘ ᴄʟᴏsᴇ ✘", callback_data=f'spol#{reqstr1}#close_spellcheck')])
+    spell_check_del = await msg.reply_text(
+        text="<b>Sᴘᴇʟʟɪɴɢ Mɪꜱᴛᴀᴋᴇ Bʀᴏ ‼️\n\nᴅᴏɴ'ᴛ ᴡᴏʀʀʏ 😊 Cʜᴏᴏꜱᴇ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ᴏɴᴇ ʙᴇʟᴏᴡ 👇</b>",
+        reply_markup=InlineKeyboardMarkup(btn),
+        reply_to_message_id=msg.id
     )
-    await asyncio.sleep(600)
+    await asyncio.sleep(15)
     await spell_check_del.delete()
+
+#SPELL CHECK END
     
 
 
