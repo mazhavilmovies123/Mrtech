@@ -16,34 +16,7 @@ Editing the Bot 💐
 
 <b>DEVS:</b>
 - <a href=https://t.me/wudixh14>Update Channel :)</a>"""
-    MANUELFILTER_TXT = """Help: <b>Filters</b>
 
-- Filter is the feature were users can set automated replies for a particular keyword and bot will respond whenever a keyword is found the message
-
-<b>NOTE:</b>
-1. Bot should have admin privillage.
-2. only admins can add filters in a chat.
-3. alert buttons have a limit of 64 characters.
-
-<b>Commands and Usage:</b>
-• /filter - <code>add a filter in chat</code>
-• /filters - <code>list all the filters of a chat</code>
-• /del - <code>delete a specific filter in chat</code>
-• /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
-
-- Bot Supports both url and alert inline buttons.
-
-<b>NOTE:</b>
-1. Telegram will not allows you to send buttons without any content, so content is mandatory.
-2. Bot supports buttons with any telegram media type.
-3. Buttons should be properly parsed as markdown format
-
-<b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/bot)</code>
-
-<b>Alert buttons:</b>
-<code>[Button Text](buttonalert:This is an alert message)</code>"""
     AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
 
 <b>NOTE:</b>
@@ -64,9 +37,7 @@ Editing the Bot 💐
 • /connect  - <code>connect a particular chat to your PM</code>
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
-    EXTRAMOD_TXT = """No Features 🚫 
-Thank U 🌪️
-    """
+
     STATUS_TXT = """★ 𝚃𝙾𝚃𝙰𝙻 𝙵𝙸𝙻𝙴𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝚄𝚂𝙴𝚁𝚂: <code>{}</code>
 ★ 𝚃𝙾𝚃𝙰𝙻 𝙲𝙷𝙰𝚃𝚂: <code>{}</code>
@@ -83,30 +54,50 @@ Kuttu Bot 2 ⚡
 ID - <code>{}</code>
 Name - {}
 """
-    ALRT_TXT = """ᴛʜɪꜱ ɪꜱ ɴᴏᴛ ꜰᴏʀ ʏᴏʏ ꜱɪʀ"""
+    ALRT_TXT = """Hello {},
+This is Not your Request
+Request Yourself...!!"""
 
-    OLD_ALRT_TXT = """𝐘𝐨𝐮 𝐚𝐫𝐞 𝐮𝐬𝐢𝐧𝐠 𝐨𝐧𝐞 𝐨𝐟 𝐦𝐲 𝐨𝐥𝐝 𝐦𝐞𝐬𝐬𝐚𝐠𝐞𝐬, 𝐩𝐥𝐞𝐚𝐬𝐞 𝐬𝐞𝐧𝐝 𝐭𝐡𝐞 𝐫𝐞𝐪𝐮𝐞𝐬𝐭 𝐚𝐠𝐚𝐢𝐧 """
+    OLD_ALRT_TXT = """Hey {},
+You are using one of old message,
+Request Again"""
 
-    TOP_ALRT_MSG = """♻️ ᴄʜᴇᴄᴋɪɴɢ ꜰɪʟᴇ ᴏɴ ᴍʏ ᴅᴀᴛᴀʙᴀꜱᴇ... ♻️"""
+    CUDNT_FND = """<b><i>
+𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍
+𝖣𝗂𝖽 𝗒𝗈𝗎 𝗆𝖾𝖺𝗇 𝖺𝗇𝗒 𝗈𝗇𝖾 𝗈𝖿 𝗍𝗁𝖾𝗌𝖾?</i></b>"""
 
-    MVE_NT_FND = """<b>ᴛʜɪꜱ ᴍᴏᴠɪᴇ ɪꜱ ɴᴏᴛ ʏᴇᴛ  ʀᴇʟᴇᴀꜱᴇᴅ ᴏʀ ᴀᴅᴅᴇᴅ ᴛᴏ ᴅᴀᴛᴀʙᴀꜱᴇ</b> """
+    I_CUDNT = """❌ <b>𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍</b>\n\n‼ <b><i>𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @im_goutham_josh</i></b>"""
 
-    NORSLTS = """★ #𝗡𝗼𝗥𝗲𝘀𝘂𝗹𝘁𝘀 ★
-𝗜𝗗 <b>: {}</b>
-𝗡𝗮𝗺𝗲 <b>: {}</b>
-𝗠𝗲𝘀𝘀𝗮𝗴𝗲 <b>: {}</b>"""
+    I_CUD_NT = """❌ <b>𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍</b>\n\n‼ <b><i>𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @im_goutham_josh</i></b>"""
 
-    I_CUDNT = """ʜᴇʟʟᴏ {} ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏ ᴍᴏᴠɪᴇꜱ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ. 
-ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇꜱᴛ ꜰᴏʀᴍᴀᴛ 
-➠ ɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ 
-➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ 
-➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ
-➠ ᴘᴀꜱᴛᴇ ᴛʜɪꜱ ɢʀᴏᴜᴘ 
-ᴇxᴀᴍᴘʟᴇ : ᴋᴀɴᴛᴀʀᴀ 2022 
-🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ' : ( ! , . / )"""
+    MVE_NT_FND = """❌ <b>𝖨 𝖼𝗈𝗎𝗅𝖽𝗇'𝗍 𝖿𝗂𝗇𝖽 𝖺𝗇𝗒𝗍𝗁𝗂𝗇𝗀 𝗋𝖾𝗅𝖺𝗍𝖾𝖽 𝗍𝗈 𝗍𝗁𝖺𝗍</b>\n\n‼ <b><i>𝖱𝖾𝗉𝗈𝗋𝗍 𝗍𝗈 𝖺𝖽𝗆𝗂𝗇 ▶ @im_goutham_josh</i></b>"""
 
-    I_CUD_NT = """ʜᴇʟʟᴏ {} ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ.ᴄʜᴇᴄᴋ ʏᴏᴜʀ ꜱᴘᴇʟʟɪɴɢ."""
-    
-    CUDNT_FND = """ʜᴇʟʟᴏ {} ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ᴛʜᴀᴛ ᴅɪᴅ ʏᴏᴜ ᴍᴇᴀɴ ᴀɴʏ ᴏɴᴇ ᴏꜰ ᴛʜᴇꜱᴇ?"""
+    TOP_ALRT_MSG = """𝖢𝗁𝖾𝖼𝗄𝗂𝗇𝗀 𝖿𝗈𝗋 𝗊𝗎𝖾𝗋𝗒 𝗂𝗇 𝖣𝖺𝗍𝖺𝖻𝖺𝗌𝖾..."""
 
-    REPRT_MSG = """ Reported To Admin"""
+    MELCOW_ENG = """<b>Hey {}, Welcome to {}</b> 
+
+• 𝖭𝗈 𝖯𝗋𝗈𝗆𝗈, 𝖭𝗈 𝖯𝗈𝗋𝗇, 𝖭𝗈 𝖮𝗍𝗁𝖾𝗋 𝖠𝖻𝗎𝗌𝖾𝗌
+• 𝖠𝗌𝗄 𝖸𝗈𝗎𝗋 𝖬𝗈𝗏𝗂𝖾𝗌 𝖶𝗂𝗍𝗁 𝖢𝗈𝗋𝗋𝖾𝖼𝗍 𝖲𝗉𝖾𝗅𝗅𝗂𝗇𝗀
+• 𝖲𝗉𝖺𝗆𝗆𝖾𝗋𝗌 𝖲𝗍𝖺𝗒 𝖠𝗐𝖺𝗒
+• 𝖥𝖾𝖾𝗅 𝖥𝗋𝖾𝖾 𝖳𝗈 𝖱𝖾𝗉𝗈𝗋𝗍 𝖠𝗇𝗒 𝖤𝗋𝗋𝗈𝗋𝗌 𝖳𝗈 𝖠𝖽𝗆𝗂𝗇𝗌 𝗎𝗌𝗂𝗇𝗀 @admin
+
+<u>𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝘀 𝗙𝗼𝗿𝗺𝗮𝘁𝘀</u>
+
+• 𝖲𝗈𝗅𝗈 2017
+• 𝖣𝗁𝗈𝗈𝗆 3 𝖧𝗂𝗇𝖽𝗂
+• 𝖪𝗎𝗋𝗎𝗉 𝖪𝖺𝗇
+• 𝖣𝖺𝗋𝗄 𝗌01
+• 𝖲𝗁𝖾 𝖧𝗎𝗅𝗄 720𝗉
+• 𝖥𝗋𝗂𝖾𝗇𝖽𝗌 𝗌03 1080𝗉
+• 𝖬𝗎𝗌𝗍 𝗋𝖾𝖺𝖽 𝗍𝗁𝗂𝗌 https://graph.org/Rules-Of-ELDORADO-01-11
+
+‼️𝗗𝗼𝗻𝘁 𝗮𝗱𝗱 𝘄𝗼𝗿𝗱𝘀 & 𝘀𝘆𝗺𝗯𝗼𝗹𝘀 𝗹𝗶𝗸𝗲 , . -  send link movie series 𝗲𝘁𝗰‼️"""
+
+
+    NORSLTS = """
+#NoResults 📌
+Kuttu Bot 
+
+ID <b>: {}</b>
+Name <b>: {}</b>
+Message <b>: {}</b>"""
