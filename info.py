@@ -40,6 +40,7 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'file')
 
 # Others
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
+MAX_B_TN = environ.get("MAX_B_TN", "10")
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', 0))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'wudixh14')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), False)
