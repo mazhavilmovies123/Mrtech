@@ -635,7 +635,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = script.RESULT_TXT.format(search) #result for group
+        cap = f"<b>👋 𝖧𝖾𝗒 {message.from_user.mention}\n📁 𝖸𝗈𝗎𝗋 𝖥𝗂𝗅𝖾𝗌 𝖠𝗋𝖾 𝖱𝖾𝖺𝖽𝗒</b>" #result for group
     if imdb and imdb.get('poster'):
         try:
             delauto = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
