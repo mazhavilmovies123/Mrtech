@@ -1,6 +1,6 @@
 version: "3.10.8"
 services:
-   worker:
+  worker:
     build: .
     environment:
       BOT_TOKEN: $BOT_TOKEN
@@ -8,7 +8,11 @@ services:
       API_HASH: $API_HASH
       CHANNELS: $CHANNELS
       ADMINS: $ADMINS
+      PICS: $PICS
       LOG_CHANNEL: $LOG_CHANNEL
-      DATABASE_NAME: $DATABASE_NAME
+      AUTH_USERS: $AUTH_USERS
+      AUTH_CHANNEL: $AUTH_CHANNEL
       DATABASE_URI: $DATABASE_URI
+      DATABASE_NAME: $DATABASE_NAME
+      COLLECTION_NAME: $COLLECTION_NAME
       HEROKU_API_KEY: $HEROKU_API_KEY
