@@ -370,7 +370,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             protect_content=True if ident == 'checksubp' else False
         )
     elif query.data == "pages":
-        await query.answer('DONTOUCH')
+        await query.answer('DONTOUCH🚫')
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -529,7 +529,9 @@ async def auto_filter(client, msg):
         files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
         if not files:
             # Instead of spell check, return "Search Failed"
-            return await message.reply_text("🔍 Search Failed: No results found.")
+            sdell = await message.reply_text("**𝖨 𝖢𝗈𝗎𝗅𝖽𝗇'𝗍 𝖥𝗂𝗇𝖽 𝖳𝗁𝖾 𝖬𝖾𝖽𝗂𝖺 𝖥𝗂𝗅𝖾 𝖸𝗈𝗎 𝖱𝖾𝗊𝗎𝖾𝗌𝗍𝖾𝖽** 😕\n𝖪𝗂𝗇𝖽𝗅𝗒 𝖱𝖾𝗆𝗈𝗏𝖾 𝖲𝗒𝗆𝖻𝗈𝗅𝗌 𝖫𝗂𝗄𝖾 ,./-_:;,𝖠𝗇𝖽 𝖳𝗒𝗉𝖾 𝖨𝗇 𝖢𝗈𝗋𝗋𝖾𝖼𝗍𝗅𝗒.\n(𝖱𝖾𝖿𝖾𝗋 𝖦𝗈𝗈𝗀𝗅𝖾)")
+            await asyncio.sleep(15)
+            await sdell.delete()
     else:
         return  # Ignore messages that are too short or too long
     
@@ -539,7 +541,7 @@ async def auto_filter(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}]-✨-{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"[{get_size(file.file_size)}]--{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
