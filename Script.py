@@ -12,10 +12,10 @@ Ask Here Movies in Pm 🔪
 ✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: Koyeb
 ✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v2 [ 𝙱𝙴𝚃𝙰 ]"""
     SOURCE_TXT = """<b>NOTE:</b>
-Editing the Bot 💐
+- It is an private one 🕐 
 
 <b>DEVS:</b>
-- <a href=https://t.me/wudixh14>Update Channel :)</a>"""
+- <a href=https://t.me/filmfactorygroup1>Update Channel :)</a>"""
 
     AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
 
