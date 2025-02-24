@@ -393,14 +393,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
             InlineKeyboardButton('Delete', callback_data='delete')
         ],[
-            InlineKeyboardButton('Force Sub', callback_data='forcesub'),
-            InlineKeyboardButton('Filters', callback_data='filters')
+            InlineKeyboardButton('🗳 Force Sub', callback_data='forcesub'),
+            InlineKeyboardButton('🔍 Filters', callback_data='filters')
         ],[
-            InlineKeyboardButton('Index', callback_data='inedx'),
-            InlineKeyboardButton('Promotions', callback_data='promotions')
+            InlineKeyboardButton('📚 Index', callback_data='inedx'),
+            InlineKeyboardButton('📢 Promotions', callback_data='promotions')
         ],[
-            InlineKeyboardButton('Settings', callback_data='settis'),
-            InlineKeyboardButton('Utilities', callback_data='utili')
+            InlineKeyboardButton('⚙ Settings', callback_data='settis'),
+            InlineKeyboardButton('📊 Utilities', callback_data='utili')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
