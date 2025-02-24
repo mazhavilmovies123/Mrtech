@@ -387,9 +387,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('Auto Filter', callback_data='autofilter')
+            InlineKeyboardButton('🚫 Bans', callback_data='ban'),
+            InlineKeyboardButton('💬 Custom Message', callback_data='custom')
         ], [
-            InlineKeyboardButton('📊 Usage', callback_data='usage'),
+            InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
+            InlineKeyboardButton('Delete', callback_data='delete')
+        ],[
             InlineKeyboardButton('🔮 Status', callback_data='stats')
         ],[
             InlineKeyboardButton('🏠 Home', callback_data='start')
@@ -411,13 +414,43 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "autofilter":
+    elif query.data == "ban":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.AUTOFILTER_TXT,
+            text=script.BAN_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+     elif query.data == "custom":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CUSTOM_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "captions":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.CAPTIONS_TXT,
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+    elif query.data == "delete":
+        buttons = [[
+            InlineKeyboardButton('👩‍🦯 Back', callback_data='help')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text=script.DELETE_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
