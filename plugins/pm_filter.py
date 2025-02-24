@@ -424,7 +424,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.CUSTOM_TXT,
+            text="<blockquote>Custom Messages & Images\n<i>Configure custom messages and images for various actions, such as file info, file deletion, file not found, or force subscription prompts.</i></blockquote>\n\n‣ /infomsg - Set info message before sending file - Reply /infomsg to a message to set or  /infomsg off to remove",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
