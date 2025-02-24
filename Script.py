@@ -5,7 +5,7 @@ Ask Here Movies in Pm 🔪
     HELP_TXT = """𝙷𝙴𝚈 {}
 You can find the bot commands here.
 
-‣ /help - Show this help message
+‣ /help - <i>Show this help message</i>
 
 <blockquote>Tap on corresponding modules to get the commands of that module.</blockquote>"""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
