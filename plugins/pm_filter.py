@@ -414,7 +414,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.BAN_TXT,
+            text="<b><blockquote>User Management\n<i>Ban or unban users to control access to the bot.</i></blockquote>\n\n‣ /ban - <i>Ban a user from bot</i> - /ban user_id\n‣ /unban - <i>Unban a user from bot</i> - /unban user_id</b>",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
