@@ -372,11 +372,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer('DONTOUCH🚫')
     elif query.data == "start":
-        buttons = [[
-            InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-        ], [           
+        buttons = [[            
             InlineKeyboardButton('🛠️ Help 🛠️', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('🤾‍♂ Source Code', url=f"https://t.me/Dr_Benjamin_Louis_01")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -434,7 +432,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.CAPTIONS_TXT,
+            text="File Caption Management Manage or customize captions for files, including additional captions, to enhance file presentation.",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -444,7 +442,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="File/Auto Deletion Management",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -454,7 +452,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Force Subscription Management",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -464,7 +462,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Filter Management",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -474,7 +472,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Database Indexing",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -484,7 +482,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Manage Promotional Links",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -494,7 +492,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Bot Settings Management",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -504,7 +502,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.DELETE_TXT,
+            text="Utility Commands",
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
