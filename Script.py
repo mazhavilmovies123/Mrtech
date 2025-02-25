@@ -9,12 +9,12 @@ You can find the bot commands here.
 
 <blockquote>Tap on corresponding modules to get the commands of that module.</blockquote>"""
     ABOUT_TXT = """✯ 𝙼𝚈 𝙽𝙰𝙼𝙴: {}
-✯ 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href=https://t.me/Leomc_bot>Leo MC</a>
-✯ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
-✯ 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
-✯ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: 𝙼𝙾𝙽𝙶𝙾 𝙳𝙱
-✯ 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: Koyeb
-✯ 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v2 [ 𝙱𝙴𝚃𝙰 ]"""
+🧑🏻‍💻 𝙲𝚁𝙴𝙰𝚃𝙾𝚁: <a href=https://t.me/Leomc_bot>Leo MC</a>
+📝 𝙻𝙸𝙱𝚁𝙰𝚁𝚈: 𝙿𝚈𝚁𝙾𝙶𝚁𝙰𝙼
+📚 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 𝟹
+⚠️ 𝙳𝙰𝚃𝙰 𝙱𝙰𝚂𝙴: 𝙼𝙾𝙽𝙶𝙾 𝙳𝙱
+📈 𝙱𝙾𝚃 𝚂𝙴𝚁𝚅𝙴𝚁: Koyeb
+🗿 𝙱𝚄𝙸𝙻𝙳 𝚂𝚃𝙰𝚃𝚄𝚂: v5 [ NISSAN GTR]"""
     SOURCE_TXT = """<b>NOTE:</b>
 - It is an private one 🕐 
 
