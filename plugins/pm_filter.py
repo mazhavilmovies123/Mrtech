@@ -373,7 +373,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('DONTOUCH🚫')
     elif query.data == "start":
         buttons = [[            
-            InlineKeyboardButton('🛠️ Help 🛠️', callback_data='help'),
+            InlineKeyboardButton(' 🆘 Help ', callback_data='help'),
             InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Leomc_bot")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
