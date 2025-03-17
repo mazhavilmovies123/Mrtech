@@ -75,8 +75,7 @@ async def start(client, message):
             InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Leomc_bot")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_video(
-            video=random.choice(PICS),
+        await message.reply_text(
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
