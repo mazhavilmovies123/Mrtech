@@ -58,7 +58,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎀[{get_size(file.file_size)}]-☢-{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🇿𝐢𝐚💎[{get_size(file.file_size)}]-☢-{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -67,10 +67,10 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎀{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🇿𝐢𝐚💎{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"🎀{get_size(file.file_size)}",
+                    text=f"🇿𝐢𝐚💎{get_size(file.file_size)}",
                     callback_data=f'files_#{file.file_id}',
                 ),
             ]
@@ -385,8 +385,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🚫 Bans', callback_data='ban'),
-            InlineKeyboardButton('💬 Custom Message', callback_data='custom')
+            InlineKeyboardButton('🚫 Bans', url=f"https://t.me/Cyber_Fcracker"),
+            InlineKeyboardButton('💬 Custom Message', url=f"https://t.me/Cyber_Fcracker")
         ], [
             InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
             InlineKeyboardButton('Delete', callback_data='delete')
