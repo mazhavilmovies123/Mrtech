@@ -48,13 +48,13 @@ You can find the bot commands here.
 ★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱
 ★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱"""
     LOG_TEXT_G = """#NewGroup
-Goku bot 💫
+Zia Bot 💫
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
 """
     LOG_TEXT_P = """#NewUser
-Goku bot ⚡
+Zia bot ⚡
 ID - <code>{}</code>
 Name - {}
 """
