@@ -684,7 +684,7 @@ async def auto_filter(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎀[{get_size(file.file_size)}]--{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"🇿𝐢𝐚💎[{get_size(file.file_size)}]--{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -693,11 +693,11 @@ async def auto_filter(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🎀{file.file_name}",
+                    text=f"🇿𝐢𝐚💎{file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f"🎀{get_size(file.file_size)}",
+                    text=f"🇿𝐢𝐚💎{get_size(file.file_size)}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
             ]
