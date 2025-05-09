@@ -386,10 +386,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('🪀CGM MOVIES', url=f"https://t.me/CGM_Files"),
-            InlineKeyboardButton('💬 Custom Message', url=f"https://t.me/Cyber_Fcracker")
+            InlineKeyboardButton('💬 Movie Request Group', url=f"https://t.me/movie_requesting_ww")
         ], [
-            InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
-            InlineKeyboardButton('Delete', callback_data='delete')
+            InlineKeyboardButton('𖤍 𝗖𝘆𝗯𝗲𝗿𝗙𝗖𝗿𝗮𝗰𝗸𝗲𝗿', url=f"https://t.me/Cyber_Fcracker"),
+            InlineKeyboardButton('🤖𝗕𝗢𝗧 2', url=f"https://t.me/MovieRequestingGBot")
         ],[
             InlineKeyboardButton('🗳 Force Sub', callback_data='forcesub'),
             InlineKeyboardButton('🔍 Filters', callback_data='filters')
