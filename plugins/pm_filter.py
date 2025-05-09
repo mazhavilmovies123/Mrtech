@@ -385,7 +385,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🚫 Bans', url=f"https://t.me/Cyber_Fcracker"),
+            InlineKeyboardButton('🪀CGM MOVIES', url=f"https://t.me/CGM_Files"),
             InlineKeyboardButton('💬 Custom Message', url=f"https://t.me/Cyber_Fcracker")
         ], [
             InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
