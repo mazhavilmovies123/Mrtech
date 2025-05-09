@@ -373,7 +373,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('DONTOUCH🚫')
     elif query.data == "start":
         buttons = [[            
-            InlineKeyboardButton(' 🆘 Help ', callback_data='help'),
+            InlineKeyboardButton(' 🆘 𝗠𝗘𝗡𝗨 ', callback_data='help'),
             InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Cyber_Fcracker")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -391,14 +391,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𖤍 𝗖𝘆𝗯𝗲𝗿𝗙𝗖𝗿𝗮𝗰𝗸𝗲𝗿', url=f"https://t.me/Cyber_Fcracker"),
             InlineKeyboardButton('🤖𝗕𝗢𝗧 2', url=f"https://t.me/MovieRequestingGBot")
         ],[
-            InlineKeyboardButton('🗳 Force Sub', callback_data='forcesub'),
-            InlineKeyboardButton('🔍 Filters', callback_data='filters')
+            InlineKeyboardButton('🗳 𝗠𝗼𝘃𝗶𝗲𝘀', url=f"https://t.me/CyberGramMovies"),
+            InlineKeyboardButton('🔍 𝗚𝗿𝗼𝘂𝗽 1', url=f"https://t.me/+MJOIZRO-tkBiOTBl")
         ],[
-            InlineKeyboardButton('📚 Index', callback_data='inedx'),
-            InlineKeyboardButton('📢 Promotions', callback_data='promotions')
+            InlineKeyboardButton('📚 𝗚𝗿𝗼𝘂𝗽 2', url=f"https://t.me/+0KptmbFCy_45MmU1"),
+            InlineKeyboardButton('📢 Promotions', url=f"https://t.me/iam_fraz_bot")
         ],[
-            InlineKeyboardButton('⚙ Settings', callback_data='settis'),
-            InlineKeyboardButton('📊 Utilities', callback_data='utili')
+            InlineKeyboardButton('𝗔𝗱𝗱 𝗺𝗲 𝘁𝗼 𝘂𝗿 𝗚𝗿𝗼𝘂𝗽', url=f"http://t.me/MoviefrazBot?startgroup=true"),
+            InlineKeyboardButton('⚙ 𝗕𝗢𝗧 𝗥𝗘𝗣𝗢', url=f"https://t.me/iam_fraz_bot")
         ],[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='start')
         ]]        
