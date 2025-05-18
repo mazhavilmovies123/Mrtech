@@ -58,7 +58,7 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎[{get_size(file.file_size)}]-☢-{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🎀[{get_size(file.file_size)}]-☢-{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
             ]
             for file in files
@@ -67,10 +67,10 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎{file.file_name}", callback_data=f'files#{file.file_id}'
+                    text=f"🎀{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎{get_size(file.file_size)}",
+                    text=f"🎀{get_size(file.file_size)}",
                     callback_data=f'files_#{file.file_id}',
                 ),
             ]
@@ -373,7 +373,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('DONTOUCH🚫')
     elif query.data == "start":
         buttons = [[            
-            InlineKeyboardButton(' 🆘 𝗠𝗘𝗡𝗨 ', callback_data='help'),
+            InlineKeyboardButton(' 🆘 Help ', callback_data='help'),
             InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Cyber_Fcracker")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
@@ -385,20 +385,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🪀CGM MOVIES', url=f"https://t.me/CGM_Files"),
-            InlineKeyboardButton('💬 Movie Request Group', url=f"https://t.me/movie_requesting_ww")
+            InlineKeyboardButton('🚫 Bans', callback_data='ban'),
+            InlineKeyboardButton('💬 Custom Message', callback_data='custom')
         ], [
-            InlineKeyboardButton('𖤍 𝗖𝘆𝗯𝗲𝗿𝗙𝗖𝗿𝗮𝗰𝗸𝗲𝗿', url=f"https://t.me/Cyber_Fcracker"),
-            InlineKeyboardButton('🤖𝗕𝗢𝗧 2', url=f"https://t.me/MovieRequestingGBot")
+            InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
+            InlineKeyboardButton('Delete', callback_data='delete')
         ],[
-            InlineKeyboardButton('🗳 𝗠𝗼𝘃𝗶𝗲𝘀', url=f"https://t.me/CyberGramMovies"),
-            InlineKeyboardButton('🔍 𝗚𝗿𝗼𝘂𝗽 1', url=f"https://t.me/+MJOIZRO-tkBiOTBl")
+            InlineKeyboardButton('🗳 Force Sub', callback_data='forcesub'),
+            InlineKeyboardButton('🔍 Filters', callback_data='filters')
         ],[
-            InlineKeyboardButton('📚 𝗚𝗿𝗼𝘂𝗽 2', url=f"https://t.me/+0KptmbFCy_45MmU1"),
-            InlineKeyboardButton('📢 Promotions', url=f"https://t.me/iam_fraz_bot")
+            InlineKeyboardButton('📚 Index', callback_data='inedx'),
+            InlineKeyboardButton('📢 Promotions', callback_data='promotions')
         ],[
-            InlineKeyboardButton('𝗔𝗱𝗱 𝗺𝗲 𝘁𝗼 𝘂𝗿 𝗚𝗿𝗼𝘂𝗽', url=f"http://t.me/MoviefrazBot?startgroup=true"),
-            InlineKeyboardButton('⚙ 𝗕𝗢𝗧 𝗥𝗘𝗣𝗢', url=f"https://t.me/iam_fraz_bot")
+            InlineKeyboardButton('⚙ Settings', callback_data='settis'),
+            InlineKeyboardButton('📊 Utilities', callback_data='utili')
         ],[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='start')
         ]]        
@@ -684,7 +684,7 @@ async def auto_filter(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎[{get_size(file.file_size)}]--{file.file_name}", callback_data=f'{pre}#{file.file_id}'
+                    text=f"🎀[{get_size(file.file_size)}]--{file.file_name}", callback_data=f'{pre}#{file.file_id}'
                 ),
             ]
             for file in files
@@ -693,11 +693,11 @@ async def auto_filter(client, msg):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎{file.file_name}",
+                    text=f"🎀{file.file_name}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
                 InlineKeyboardButton(
-                    text=f"🇿𝐢𝐚💎{get_size(file.file_size)}",
+                    text=f"🎀{get_size(file.file_size)}",
                     callback_data=f'{pre}#{file.file_id}',
                 ),
             ]
