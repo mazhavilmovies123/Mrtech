@@ -374,7 +374,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "start":
         buttons = [[            
             InlineKeyboardButton(' 🆘 Help ', callback_data='help'),
-            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/+GUA9CB6F-jYxNzE1")
+            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Leomc_bot")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -385,7 +385,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('Piracy Is Crime')
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('🚫 Repo', url=f"https://t.me/iam_fraz_bot"),
+            InlineKeyboardButton('🚫 Bans', callback_data='ban'),
             InlineKeyboardButton('💬 Custom Message', callback_data='custom')
         ], [
             InlineKeyboardButton('📝 Custom Captions', callback_data='captions'),
