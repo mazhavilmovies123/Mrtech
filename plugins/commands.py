@@ -33,7 +33,7 @@ async def start(client, message):
     if len(message.command) != 2:
         buttons = [[            
             InlineKeyboardButton('🆘 Help ', callback_data='help'),
-            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/Cyber_Fcracker")
+            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/BOT_UPD4TES")
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(
