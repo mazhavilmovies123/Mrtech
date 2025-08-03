@@ -99,7 +99,7 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
+                k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>")
                 await asyncio.sleep(300)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -113,7 +113,7 @@ async def start(client, message):
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
-                k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
+                k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>")
                 await asyncio.sleep(300)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -179,7 +179,7 @@ async def start(client, message):
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
                 )
-            k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
+            k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>")
             await asyncio.sleep(300)
             await m.delete()
             await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
@@ -217,7 +217,7 @@ async def start(client, message):
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
     )
-    k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
+    k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>")
     await asyncio.sleep(300)
     await m.delete()
     await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
