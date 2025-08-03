@@ -1,7 +1,6 @@
 class script(object):
     START_TXT = """𝙷𝙴𝙻𝙾 {},
-Ask Here Movies in Pm 🔪
-𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍"""
+𝘐 𝘢𝘮 𝘢 𝘢𝘯 𝘢𝘶𝘵𝘰𝘧𝘪𝘭𝘵𝘦𝘳 𝘣𝘰𝘵 𝘸𝘩𝘪𝘤𝘩 𝘧𝘪𝘯𝘥𝘴 & 𝘴𝘩𝘢𝘳𝘦𝘴 𝘮𝘦𝘥𝘪𝘢 𝘧𝘳𝘰𝘮 𝘮𝘺 𝘥𝘢𝘵𝘢𝘣𝘢𝘴𝘦. ✨"""
     HELP_TXT = """𝙷𝙴𝚈 {}
 You can find the bot commands here.
 
