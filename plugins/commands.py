@@ -100,7 +100,7 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     )
                 k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
-                await asyncio.sleep(1800)
+                await asyncio.sleep(300)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
                 return
@@ -114,7 +114,7 @@ async def start(client, message):
                     protect_content=msg.get('protect', False),
                     )
                 k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
-                await asyncio.sleep(1800)
+                await asyncio.sleep(300)
                 await m.delete()
                 await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
                 return
@@ -180,7 +180,7 @@ async def start(client, message):
                 protect_content=True if pre == 'filep' else False,
                 )
             k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
-            await asyncio.sleep(600)
+            await asyncio.sleep(300)
             await m.delete()
             await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
             return
@@ -218,7 +218,7 @@ async def start(client, message):
         protect_content=True if pre == 'filep' else False,
     )
     k = await message.reply_text("<b><u>📁 𝗪𝗮𝗿𝗻𝗶𝗻𝗴 ⚠️</u>Please save the file to your saved messages, it will be deleted in 5 mins.</blockquote>"")
-    await asyncio.sleep(1800)
+    await asyncio.sleep(300)
     await m.delete()
     await k.edit("<b>Your File/Video is successfully deleted!!!</b>")
     return             
