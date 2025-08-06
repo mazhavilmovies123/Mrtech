@@ -671,7 +671,7 @@ async def auto_filter(client, msg):
         files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
         if not files:
             # Instead of spell check, return "Search Failed"
-            sdell = await message.reply_text("**ᴄʜᴇᴄᴋ ʏᴏᴜʀ sᴘᴇʟʟɪɴɢ ɪɴ ɢᴏᴏɢʟᴇ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ 😃**")
+            sdell = await message.reply_text("𝑯𝑬𝑳𝑳𝑶 {} 𝑰 𝑪𝑶𝑼𝑳𝑫𝑵'𝑻 𝑭𝑰𝑵𝑫 𝑨𝑵𝒀𝑻𝑯𝑰𝑵𝑮 𝑹𝑬𝑳𝑨𝑻𝑬𝑫 𝑻𝑶 𝑻𝑯𝑨𝑻 . 𝑪𝑯𝑬𝑪𝑲 𝒀𝑶𝑼𝑹 𝑺𝑷𝑬𝑳𝑳𝑰𝑵𝑮.")
             await asyncio.sleep(15)
             await sdell.delete()
             return 
