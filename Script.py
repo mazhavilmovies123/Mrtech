@@ -47,13 +47,13 @@ You can find the bot commands here.
 ★ 𝚄𝚂𝙴𝙳 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱
 ★ 𝙵𝚁𝙴𝙴 𝚂𝚃𝙾𝚁𝙰𝙶𝙴: <code>{}</code> 𝙼𝚒𝙱"""
     LOG_TEXT_G = """#NewGroup
-ONR Bot 💫
+𝐌𝐑. 𝐓𝐄𝐂𝐇 ℡
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
 Added By - {}
 """
     LOG_TEXT_P = """#NewUser
-ONR bot ⚡
+𝐌𝐑. 𝐓𝐄𝐂𝐇 ℡
 ID - <code>{}</code>
 Name - {}
 """
