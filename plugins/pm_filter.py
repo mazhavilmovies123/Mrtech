@@ -398,7 +398,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('📢 Promotions', callback_data='promotions')
         ],[
             InlineKeyboardButton('⚙ Settings', callback_data='settis'),
-            InlineKeyboardButton('📊 CODE ✨', url=f"https://t.me/+QbWh1eEL0v4wM2Zl")
+            InlineKeyboardButton('📊 CODE ✨', url=f"https://t.me/mrtechmoviebot")
         ],[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='start')
         ]]        
