@@ -373,12 +373,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer('DONTOUCH🚫')
     elif query.data == "start":
         buttons = [
-                InlineKeyboardButton('🖥 Oᴛᴛ Uᴘᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ 🖥', url=f'https://t.me/+NtxN4-UzLIcyMzk1')
-               ],[
-                InlineKeyboardButton('⚙ Bᴏᴛ Mᴏᴠɪᴇ Gʀᴏᴜᴘ ⚙', url=f'https://t.me/MrTechMovies_Group')
-              ],[
-                InlineKeyboardButton('⚓️ Lᴀᴛᴇꜱᴛ Mᴏᴠɪᴇ Rᴇʟᴇᴀꜱᴇ  ⚓️', url="https://t.me/OTT_RELEASE_MOVIE"),
-        ]
+                InlineKeyboardButton('🖥 𝙊𝙏𝙏 𝙈𝙤𝙫𝙞𝙚 𝙐𝙋𝘿𝘼𝙏𝙀𝙎  🖥', url=f'https://t.me/+5iw_dWArjYg2YTBl')
+               ],[
+                InlineKeyboardButton('⚙ 𝙉𝙀𝙒 𝙈𝙊𝙑𝙄𝙀𝙎 ⚙', url=f'https://www.instagram.com/new_ott__updates?igsh=enI5ZzIzcXuzd3Bl')
+              ],[
+                InlineKeyboardButton('📤 𝙇𝘼𝙎𝙏𝙀𝙎𝙏 𝙐𝙋𝙇𝙊𝘼𝘿𝙀𝘿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 📤', url="https://t.me/+5iw_dWArjYg2YTBl"),
+        ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
