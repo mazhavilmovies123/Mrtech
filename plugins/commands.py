@@ -31,10 +31,13 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        buttons = [[            
-            InlineKeyboardButton('🆘 Help ', callback_data='help'),
-            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/mrtechmoviebot")
-        ]]
+        buttons = [
+                InlineKeyboardButton('🖥 𝙊𝙏𝙏 𝙈𝙤𝙫𝙞𝙚 𝙐𝙋𝘿𝘼𝙏𝙀𝙎  🖥', url=f'https://t.me/+5iw_dWArjYg2YTBl')
+               ],[
+                InlineKeyboardButton('⚙ 𝙉𝙀𝙒 𝙈𝙊𝙑𝙄𝙀𝙎 ⚙', url=f'https://www.instagram.com/new_ott__updates?igsh=enI5ZzIzcXuzd3Bl')
+              ],[
+                InlineKeyboardButton('📤 𝙇𝘼𝙎𝙏𝙀𝙎𝙏 𝙐𝙋𝙇𝙊𝘼𝘿𝙀𝘿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 📤', url="https://t.me/+5iw_dWArjYg2YTBl"),
+        ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -49,10 +52,13 @@ async def start(client, message):
     if not status:
           return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-        buttons = [[            
-            InlineKeyboardButton('🆘 Help ', callback_data='help'),
-            InlineKeyboardButton('🧑🏻‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ', url=f"https://t.me/mrtechmoviebot")
-        ]]
+        buttons = [
+                InlineKeyboardButton('🖥 𝙊𝙏𝙏 𝙈𝙤𝙫𝙞𝙚 𝙐𝙋𝘿𝘼𝙏𝙀𝙎  🖥', url=f'https://t.me/+5iw_dWArjYg2YTBl')
+               ],[
+                InlineKeyboardButton('⚙ 𝙉𝙀𝙒 𝙈𝙊𝙑𝙄𝙀𝙎 ⚙', url=f'https://www.instagram.com/new_ott__updates?igsh=enI5ZzIzcXuzd3Bl')
+              ],[
+                InlineKeyboardButton('📤 𝙇𝘼𝙎𝙏𝙀𝙎𝙏 𝙐𝙋𝙇𝙊𝘼𝘿𝙀𝘿 𝘾𝙃𝘼𝙉𝙉𝙀𝙇 📤', url="https://t.me/+5iw_dWArjYg2YTBl"),
+        ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
